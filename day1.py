@@ -31,10 +31,10 @@ print("student['name']:", student['name']) #输出学生的名字sly
 print(student) #输出学生信息字典{'name': 'sly', 'age': 21
 student["name"] = "xzw"
 student['school'] = "华中科技大学"
-print(student) #输出更新后的学生信息字典{'name': 'xzw', 'age': 21, '
+print(student) #输出更新后的学生信息字典{'name': 'xzw', 'age': 21, 'gender': '男', 'major': '计算机科学与技术', 'school': '华中科技大学'}
 
 del student['age'] #删除学生信息字典中的年龄键值对
-print(student) #输出删除年龄键值对后的学生信息字典{'name': '
+print(student) #输出删除年龄键值对后的学生信息字典{'name': 'xzw', 'gender': '男', 'major': '计算机科学与技术', 'school': '华中科技大学'}
 student.clear() #清空学生信息字典中的所有键值对
 print(student) #输出清空后的学生信息字典{}
 del student #删除学生信息字典对象
