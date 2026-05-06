@@ -1,3 +1,5 @@
+from utils_module.utils import file_open
+import requests
 #====================================多返回值调用
 def get_user():
     name = "小明"
@@ -93,3 +95,4 @@ try:
 except RuntimeError as e:
     print(f"错误: {e}")
     print(f"直接原因: {e.__cause__}")
+
