@@ -1,4 +1,4 @@
-from collections import Counter
+from collections import Counter, defaultdict
 import string
 
 
@@ -63,3 +63,15 @@ if __name__ == "__main__":
     # 测试2：统计文件内容（路径用正斜杠避免转义问题）
     result2 = count_word_frequency('daily_practice/day8/sample.txt')
     display_result(result2)
+
+
+#普通字典，key不存在会报错
+d = {}
+#d["水果"] += 1  #keyError
+
+#defaultdict:key值不存在自动创建默认值
+d = defaultdict(int)
+d["苹果"] += 1
+d["苹果"] += 1
+d["香蕉"] += 1
+print(d)
