@@ -7,6 +7,7 @@ stu = {
     "is_student": True
 }
 
+
 # 1. dumps:Python对象转JSON字符串
 json_str = json.dumps(stu, ensure_ascii=False, indent=4)
 print("JSON字符串：")
