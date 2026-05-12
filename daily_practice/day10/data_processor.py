@@ -92,7 +92,7 @@ class DataProcessor():
         if not self.numbers:
             raise ValueError("空列表没有最大值")
         return max(self.numbers)
-
+    
 
 # ========== 测试代码 ==========
 if __name__ == "__main__":
