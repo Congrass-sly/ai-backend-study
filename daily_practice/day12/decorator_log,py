@@ -1,0 +1,76 @@
+"""
+任务二：日志装饰器 - 记录函数调用信息
+"""
+
+import random
+
+
+def decorator_log(func):
+    """
+    日志装饰器
+    
+    功能：
+        记录函数调用前后的状态，并打印返回值
+    
+    参数：
+        func: 被装饰的函数
+    
+    返回：
+        wrapper: 包装后的函数
+    """
+    def wrapper(*args, **kwargs):
+        """
+        包装函数
+        
+        *args: 任意位置参数
+        **kwargs: 任意关键字参数
+        """
+        # 1. 调用前记录
+        print("调用函数之前:")
+        
+        # 2. 执行原函数，获取返回值
+        result = func(*args, **kwargs)
+        
+        # 3. 打印返回值（任务二核心要求）
+        print(f"返回值：{result}")
+        
+        # 4. 调用后记录
+        print("调用函数之后")
+        
+        # 5. 返回原函数的结果
+        return result
+    
+    return wrapper
+
+
+@decorator_log
+def generate_code(length=6):
+    """
+    生成纯数字验证码
+    
+    参数:
+        length: 验证码长度，默认6位
+    
+    返回:
+        str: 纯数字验证码字符串
+    
+    示例:
+        >>> generate_code(4)
+        '3847'
+    """
+    code = []
+    
+    # 循环 length 次，每次生成一个随机数字
+    for i in range(length):
+        # random.randint(0, 9)：生成 0-9 之间的随机整数
+        num = random.randint(0, 9)
+        # 将数字转为字符串，存入列表
+        code.append(str(num))
+    
+    # 将列表中的字符拼接成字符串
+    result = "".join(code)
+    return result
+
+
+# ========== 测试 ==========
+generate_code(8)
