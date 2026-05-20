@@ -183,6 +183,28 @@ def read_file(filename):
     except FileNotFoundError:
         print("错误：文件未找到")
         return ""
+    
+def write_file(filename, str):
+    """
+    打开文件并写入
+
+    参数：
+        filename:文件名
+        str:写入内容
+
+    返回：
+        写入成功
+
+    异常处理：
+        FileNotFoundError：文件不存在时打印提示
+    """
+    try:
+        with open(filename, 'w', encoding='utf-8') as f:
+            f.write(str)
+            return '写入成功'
+    except FileNotFoundError:
+        print("错误，文件未找到")
+        return
 
 
 # ========== 验证码生成 ==========
